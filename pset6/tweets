@@ -1,0 +1,37 @@
+#!/usr/bin/env python3
+
+from helpers import get_user_timeline
+from analyzer import Analyzer
+from termcolor import colored
+
+import sys, os, nltk
+
+
+# ensure proper usage
+if len(sys.argv) != 2:
+    sys.exit("Usage: ./tweets @username")
+
+# absolute paths to lists
+positives = os.path.join(sys.path[0], "positive-words.txt")   # C:\\users\\patty\\positives-words.txt'
+negatives = os.path.join(sys.path[0], "negative-words.txt")
+
+# instantiate analyzer
+analyzer = Analyzer(positives, negatives)
+
+list_tweets= get_user_timeline(sys.argv[1].replace('@',''),50)    #returns lists of tweets, each whole tweet [0],[1] etc
+
+if list_tweets == None:
+    sys.exit()
+
+
+# iterate through each tweet
+for tweet in list_tweets:         
+    score = analyzer.analyze(tweet)
+    if score > 0.0:
+        print(colored('{} {}'.format(score,tweet), "green"))
+    elif score < 0.0:
+        print(colored('{} {}'.format(score,tweet), "red"))
+    else:
+        print(colored('{} {}'.format(score,tweet), "yellow"))
+        
+    
