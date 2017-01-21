@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    index
+{% endblock %}
+
+{% block main %}
+    <ul>
+        <li><p style="font-size:10pt; font-weight:bold">{{my_dict.symbol}}</p></li>
+        <li><p style="font-style:italic;font-size:10pt">{{my_dict.name}}</p></li>
+        <li><p style="font family:serif;font-size:40pt">${{my_dict.price}}</p></li>
+    </ul>
+{% endblock %}
+

@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    display
+{% endblock %}
+
+{% block main %}
+
+
+<div class="container-fluid">
+  <h2>My stocks and shares</h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Symbol</th>
+        <th>Name</th>
+        <th>Shares</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for elem in p %}  
+      <tr>
+        <td>{{ elem.stock }}</td>
+        <td>{{ elem.name }}</td>
+        <td>{{ elem.shares }}</td>
+        <td>${{ elem.price }}</td>
+        <td>${{ elem.total }}</td>
+      </tr>
+      {% endfor %}
+      <tr style="font-weight:bold">
+          <td>TOTAL SPENDED:</td>
+          <td>${{overall_total}}</td>
+      </tr>
+      <tr style="font-weight:bold">
+          <td>CASH LEFT:</td>
+          <td>${{cash_left}}</td>
+      </tr>    
+    </tbody>
+  </table>
+</div>
+
+{% endblock %}

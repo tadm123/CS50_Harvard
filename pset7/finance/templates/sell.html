@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    sell
+{% endblock %}
+
+{% block main %}
+  <form action = "{{ url_for('sell') }}" class="form-horizontal" method = "POST" >
+  <div class="form-group">
+    <label class="col-md-4 control-label">Stock</label>
+    <div class="col-md-4">
+      <input type="text" class="form-control"  placeholder="Stock" name="stock">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-md-4 control-label">Shares</label>
+    <div class="col-md-4">
+      <input type="text" class="form-control"  placeholder="Shares" name="shares">
+    </div>
+  </div>
+ 
+  <div class="form-group">
+    <div class="col-md-offset-4 col-md-4">
+      <button type="submit" class="btn btn-default">Sell</button>
+    </div>
+  </div>
+</form>
+{% endblock %}

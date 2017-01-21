@@ -1,0 +1,23 @@
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+
+{% extends "layout.html" %}
+
+{% block title %}
+    account
+{% endblock %}
+
+{% block main %}
+     
+     <h1 class="my_header">{{ username }}</h1>
+     <p class="my_text">Cash in account: ${{ cash }}</p>
+     <img class="img-responsive" src="http://previews.123rf.com/images/valentint/valentint1405/valentint140503324/28743191-My-account-icon-Shiny-glossy-internet-button-on-white-background--Stock-Photo.jpg" alt="My account icon">
+     <form action = "{{ url_for('account') }}" method = "POST">
+        <div class="my_text">
+         <p>Add money into account:</p>
+         <p><input type = "text" name = "add_money" /></p>
+        </div> 
+         <button class="btn btn-primary">Add</button>
+
+     </form>
+{% endblock %}
+
