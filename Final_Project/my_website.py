@@ -2,8 +2,6 @@ import sqlite3
 from flask import Flask,render_template, url_for, redirect, request
 
 
-name = ""
-size = ""
 app = Flask(__name__)
 conn = sqlite3.connect('shoes.db', check_same_thread=False)
 c = conn.cursor()
