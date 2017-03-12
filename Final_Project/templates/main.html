@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<form action = "{{ url_for('search') }}" class="form" method = "POST" >
+
+        <h1>Soccer Shoes Finder</h1>
+        <div class="line-separator"></div>
+
+            <div class="container-fluid form-inline">
+
+                <input class="form-control" name = "name" type="text" placeholder="Name"/>
+                <input class="form-control" name = "size" type="text" placeholder="Size"/>
+                <button class="form-control fa fa-search" aria-hidden="true"></button>
+            </div>
+
+</form>
+
+{% endblock %}

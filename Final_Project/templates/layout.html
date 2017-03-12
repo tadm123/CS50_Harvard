@@ -1,0 +1,104 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/web_main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='js/web_main.js') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="{{ url_for('static', filename='cs/web_main.cs') }}" type="text/javascript"></script>
+    <script src="https://use.fontawesome.com/973aa1b100.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <title>Title</title>
+<style>
+    .form{
+  text-align:center;
+  margin:100px;
+  font-size:20px;
+
+}
+input{
+  margin-top:30px;
+}
+
+.form-control{
+  margin: 10px;
+  margin-top: 50px;
+}
+
+input[name="name"]{
+  width: 45% !important;
+
+}
+
+input[name="size"]{
+  width: 10% !important;
+
+}
+
+
+
+.line-separator{
+    height:10px;
+    background:#717171;
+    border-radius: 10px;
+    border-bottom:4px solid #313030;
+    width:700px;
+    margin:auto;
+}
+
+#box{
+    width:1000px;
+    margin: auto;
+
+
+}
+
+#sub{
+    margin-outside:10px;
+    border-style: inset;
+    box-sizing: border-box;
+    box-shadow: 0px -3px 0px red inset;
+}
+
+h1{
+    font-size: 70px;
+    margin-top:200px;
+    margin-bottom: 30px;
+    font-family: "Gill Sans MT";
+}
+
+h2{
+    font-size: 40px;
+    font-family: "Monospaced";
+    font-style:italic;
+}
+
+a button{
+    margin-top: 25px;
+    margin-left:500px;
+}
+
+
+.form-control:focus {
+        border-color: #ff80ff;
+        box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px rgba(255, 100, 255, 0.5);
+}
+    </style>
+
+    <script>
+    $(function() {
+    var link = $('td a').attr('href');
+    link = link.substring(0,25).concat('...');
+    $('td a').html(link);
+
+
+});
+    </script>
+
+</head>
+<body>
+
+    {% block content %}{% endblock %}
+
+</body>
+</html>
