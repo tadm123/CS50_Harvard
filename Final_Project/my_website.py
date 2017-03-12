@@ -10,7 +10,6 @@ c = conn.cursor()
 def main():
         return render_template('main.html')
 
-
 @app.route("/search/", methods=["GET", "POST"])
 def search():
     name = request.form.get("name")
@@ -18,7 +17,6 @@ def search():
 
     c.execute("SELECT * FROM shoes WHERE name LIKE ? AND sizes LIKE ? ORDER BY price",
                     ('%'+name+'%','%'+size+'%'))
-
     p = c.fetchall()
 
     url = [p[i][0] for i in range(len(p))]
